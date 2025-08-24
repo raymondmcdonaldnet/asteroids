@@ -3,6 +3,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+import sys
 
 def main():
     pygame.init()
@@ -42,6 +43,12 @@ def main():
             d.draw(screen)
 
         pygame.display.flip()
+
+        # Check for collision between player and asteroids.
+        for asteroid in asteroids:
+            if asteroid.check_collision(player):
+                print("Game over!")
+                sys.exit()
 
         # Convert delta time to seconds and store it.
         dt = clock.tick(TARGET_FPS) / 1000
