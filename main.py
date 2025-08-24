@@ -53,6 +53,12 @@ def main():
             if asteroid.check_collision(player):
                 print("Game over!")
                 sys.exit()
+        # Check for collision between shots and asteroids.
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.check_collision(shot):
+                    shot.kill()
+                    asteroid.kill()
 
         # Convert delta time to seconds and store it.
         dt = clock.tick(TARGET_FPS) / 1000
