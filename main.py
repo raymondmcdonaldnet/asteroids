@@ -7,6 +7,10 @@ import sys
 from shot import Shot
 
 def main():
+    print("Starting Asteroids!")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
+
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -62,10 +66,6 @@ def main():
 
         # Convert delta time to seconds and store it.
         dt = clock.tick(TARGET_FPS) / 1000
-
-    print("Starting Asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
 
 
 if __name__ == "__main__":
